@@ -1,0 +1,273 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+ #event_info{
+   display: none;
+   position: fixed;
+   z-index: 9999;
+   /* top: 50%;
+   left: 50%; */
+   /* transform: translate(-50%, -50%); */
+   bottom: 0;
+   right: 0;
+   align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 50%);
+}
+
+#booking_form{
+  padding: 30px;
+}
+
+#booking_form lable,
+#booking_form input{
+  margin-bottom: 10px;
+}
+
+#booking_form [type="submit"]{
+  background-color: #FCB12B;
+  border: none;
+  color: #134478;
+}
+
+#booking_form [type="submit"]:hover{
+ background-color: #FCB12B;
+ border: none;
+ color: #134478;
+}
+
+#event_info div{
+  background-color: #fff;
+  padding: 30px;
+}
+
+.booking_wrapper {
+ padding: 20px;
+ margin-bottom: 40px;
+ box-shadow: 20px 20px 0px -10px #fcb12b;
+ border: solid 2px #fff;
+ border-radius: 20px;
+}
+
+.booking_wrapper ul {
+ list-style: none;
+ display: flex;
+ padding: 0;
+ margin: 10px 0;
+}
+
+.booking_wrapper ul.actions{
+ padding: 20px 0;
+ justify-content: flex-end;
+}
+
+.booking_wrapper ul li:not(:first-child) {
+ margin-left: 10px;
+}
+
+.booking_wrapper ul li span.label{
+ font-weight: bold;
+ color: #1da1f2;
+}
+
+.booking_wrapper a {
+ font-size: 20px;
+ background-color: #fff;
+ padding: 10px 20px;
+ border-radius: 10px;
+}
+
+.booking_wrapper a.decline{
+ background-color: #fcb12b;
+}
+
+.booking_wrapper a.update{
+ background-color: #1da1f2;
+}
+
+.booking_wrapper a.pay {
+ background-color: #1da1f2;
+}
+
+
+/* tooltip */
+
+a.pay {
+ background-color: #1da1f2;
+ border: none;
+ color: #fff;
+ margin-top: -10px;
+ padding: 11px 20px;
+ border-radius: 8px;
+}
+a.pay:hover {
+ background-color: #1da1f2;
+}
+a.pay-disabled {
+ opacity: 0.4;
+ cursor: not-allowed !important;
+}
+.msg-pay{
+ display: block;
+ font-size: 14px;
+ color: #ffffff;
+}
+
+.msg-pay.disabled{
+ visibility: hidden;
+}
+
+.msg-pay.enabled{
+ visibility: visible;
+}
+
+
+
+
+
+.pop-container{
+ display: none;
+ width: 100%;
+ height: 100vh;
+ position: fixed;
+ opacity: 0.9;
+ background: transparent;
+ z-index: 40000;
+ top:0;
+ left: 0;
+ overflow: hidden;
+ animation-name: fadeIn_Container;
+ animation-duration: 1s;
+ 
+}
+
+.modal{
+ display:none;
+ top: 0;
+ min-width: 250px;
+ width: 80%;
+ height: 400px;
+ margin: 0 auto;
+ position: fixed;
+ z-index: 40001;
+ background: #fff;
+ border-radius: 10px;
+ box-shadow: 0px 0px 10px #000;
+ margin-top: 30px;
+ margin-left: 10%;
+
+ animation-name: fadeIn_Modal;
+ animation-duration: 0.8s;
+
+}
+
+.sb-header{
+ width: 100%;
+ height: 25px;
+ border-radius: 10px 10px 0px 0px;
+}
+
+.sb-header a{
+ text-decoration: none;
+ float: right;
+ line-height: 70px;
+ margin-right: 20px;
+ color: #aaa;
+}
+a.sb-open {
+  color: #134478 !important;
+}
+
+.content{
+ width: 100%;
+ height: 250px;
+}
+
+form{
+ margin-top: 20px;
+}
+
+
+a.decline_booking {
+ border: 3px solid;
+ margin: 0 15px;
+}
+
+.sb-footer{
+ width: 100%;
+ height: 80px;
+ border-radius: 0px 0px 10px 10px;
+}
+
+.fotter button{
+ float: right;
+ margin-right: 10px;
+ margin-top: 18px;
+ text-decoration: none; 
+}
+
+/****MEDIA QUERIES****/
+
+@media screen and (min-width: 600px){
+
+ .modal{
+   width: 500px;
+   height: 300px;
+   margin-left: calc(50vw - 250px);
+   margin-top: calc(50vh - 150px);
+ }
+
+
+ .sb-header{
+   width: 100%;
+   height: 40px;
+ }
+
+ .sb-header a{
+   line-height: 40px;
+   margin-right: 10px;
+ }
+
+
+ .sb-footer{
+   width: 100%;
+   height: 70px;   
+ }
+
+ .sb-footer button{
+   float: right;
+   margin-right: 10px;
+   margin-top: 10px;
+ }
+
+}
+
+/*LARGE SCREEN*/
+@media screen and (min-width: 1300px){
+
+}
+
+/****ANIMATIONS****/
+
+@keyframes fadeIn_Modal {
+ from{
+   opacity: 0;
+ }
+ to{
+   opacity: 1;
+ }
+}
+
+@keyframes fadeIn_Container {
+ from{
+   opacity: 0;
+ }
+ to{
+   opacity: 0.9;
+ }
+}
